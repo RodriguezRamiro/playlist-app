@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "playlist-app"
+version = "0.1.0"
+description = ""
+authors = ["RodriguezRamiro <r.d.r@live.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+flask = "^3.0.3"
+flask-debugtoolbar = "^0.16.0"
+wtforms = "^3.1.2"
+flask-wtf = "^1.2.1"
+flask-sqlalchemy = "^3.1.1"
+psycopg2 = "^2.9.9"
+psycopg2-binary = "^2.9.9"
+wtforms-alchemy = "^0.18.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

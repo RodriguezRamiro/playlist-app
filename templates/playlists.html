@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="jumbotron">
+  <h1>All Playlists</h1>
+  <p class="lead">Here are all your playlists:</p>
+</div>
+
+{% if playlists %}
+  <ul class="list-group mb-4">
+    {% for playlist in playlists %}
+      <li class="list-group-item">
+        <a href="/playlists/{{ playlist.id }}">
+          <strong>{{ playlist.name }}</strong>
+        </a>
+        {% if playlist.description %}
+          <p class="mb-1">{{ playlist.description }}</p>
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+{% else %}
+  <div class="text-danger">
+    No playlists available.
+  </div>
+{% endif %}
+
+<p>
+  <a class="btn btn-primary" href="/playlists/add">
+    Create New Playlist
+  </a>
+</p>
+
+{% endblock %}

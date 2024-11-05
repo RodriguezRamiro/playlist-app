@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Check Out the Songs!</h1>
+
+<ul class="list-group">
+  {% for song in songs %}
+    <li class="list-group-item">
+      <a href="/songs/{{ song.id }}">{{ song.title }}</a>
+    </li>
+  {% else %}
+    <li class="list-group-item text-danger">No songs available.</li>
+  {% endfor %}
+</ul>
+
+<p>
+  <a href="{{ url_for('show_all_playlists') }}" class="btn btn-secondary">Back to Playlists</a>
+
+  <a class="btn btn-primary" href="/songs/add">Add a Song</a>
+</p>
+
+{% endblock %}
